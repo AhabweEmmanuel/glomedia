@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "media-hub": {
@@ -24,9 +24,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "css/agency.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "vendor/fontawesome-free/css/all.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "vendor/jquery-easing/jquery.easing.min.js",
+              "js/agency.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -119,6 +127,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "media-hub"
+    }
+  },
+  "defaultProject": "media-hub",
+  "cli": {
+    "analytics": "ecfb9dbb-6dbf-48ab-a446-9a6759d7f840"
+  }
 }

@@ -1,0 +1,71 @@
+<!-- Page Header -->
+<!-- style="background-image: url('img/home-bg.jpg')" -->
+<header class="masthead">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>Clean Services</h1>
+          <span class="subheading">Service Provider listing by Glo Media</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+      <form class="card card-sm">
+        <div class="card-body row no-gutters align-items-center">
+          <div class="col-auto">
+            <i class="fas fa-search h4 text-body"></i>
+          </div>
+          <!--end of col-->
+          <div class="col">
+            <input (input)="onSearch()" [(ngModel)]="searchText" class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search...">
+          </div>
+          <!--end of col-->
+          <!-- <div class="col-auto">
+            <button class="btn btn-lg btn-light" type="submit">Search</button>
+          </div> -->
+          <!--end of col-->
+        </div>
+      </form>
+    </div>
+    <!--end of col-->
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <div *ngFor="let sp of dataService.serviceProviders">
+        <div class="post-preview">
+
+          <a [routerLink]="['/sp-profile', sp.id]">
+            <h2 class="post-title">
+              {{sp.name}}
+            </h2>
+            <h3 class="post-subtitle">
+              {{sp.description}}
+            </h3>
+          </a>
+
+          <img [routerLink]="['/sp-profile', sp.id]" class="img-fluid" [src]="sp.thumb" alt="">
+          <p class="post-meta">Listed by
+            <a href="#">Glo Media</a>
+            on {{sp.date}}</p>
+          <p>{{sp.content}}</p>
+        </div>
+        <hr>
+      </div>
+
+
+      <!-- Pager -->
+      <!-- <div class="clearfix">
+          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+        </div> -->
+    </div>
+  </div>
+</div>
